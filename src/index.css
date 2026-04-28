@@ -2,41 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* UrbanNest Realty design system. All colors MUST be HSL. */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 42 33% 98%;
+    --foreground: 222 31% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 31% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 31% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 222 49% 17%;
+    --primary-foreground: 42 33% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 43 36% 91%;
+    --secondary-foreground: 222 49% 17%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 42 28% 94%;
+    --muted-foreground: 218 12% 42%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 40 54% 55%;
+    --accent-foreground: 222 49% 17%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 42 33% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 42 20% 84%;
+    --input: 42 20% 88%;
+    --ring: 40 54% 55%;
 
-    --radius: 0.5rem;
+    --charcoal: 220 13% 18%;
+    --gold: 40 54% 55%;
+    --gold-soft: 42 58% 91%;
+    --navy-soft: 218 41% 24%;
+    --surface: 42 33% 98%;
+    --surface-elevated: 0 0% 100%;
+    --hero-overlay: 222 49% 17%;
+    --gradient-hero: linear-gradient(90deg, hsl(222 49% 17% / 0.84), hsl(222 49% 17% / 0.36), hsl(222 49% 17% / 0.12));
+    --gradient-navy: linear-gradient(135deg, hsl(222 49% 17%), hsl(218 41% 24%));
+    --gradient-gold: linear-gradient(135deg, hsl(40 54% 55%), hsl(43 67% 70%));
+    --shadow-premium: 0 24px 70px -32px hsl(222 49% 17% / 0.35);
+    --shadow-card: 0 18px 40px -28px hsl(222 31% 13% / 0.45);
+
+    --radius: 0.375rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +113,63 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: theme('fontFamily.body');
   }
+
+  h1, h2, h3 {
+    font-family: theme('fontFamily.display');
+    letter-spacing: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .luxury-reveal {
+    animation: luxury-reveal 720ms cubic-bezier(0.2, 0.9, 0.2, 1) both;
+  }
+
+  .image-zoom {
+    @apply transition-transform duration-700 ease-out group-hover:scale-105;
+  }
+
+  .gold-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gold-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 30%, hsl(var(--accent) / 0.16) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 900ms ease;
+  }
+
+  .gold-sheen:hover::after {
+    transform: translateX(120%);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .luxury-reveal,
+    .image-zoom,
+    .gold-sheen::after {
+      animation: none;
+      transition: none;
+      transform: none;
+    }
+  }
+}
+
+@keyframes luxury-reveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }
