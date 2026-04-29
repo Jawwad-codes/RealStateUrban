@@ -1,7 +1,10 @@
 {
-  "/listings/page": "app/listings/page.js",
-  "/page": "app/page.js",
-  "/neighborhoods/page": "app/neighborhoods/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/agents/page": "app/agents/page.js",
   "/insights/page": "app/insights/page.js",
-  "/agents/page": "app/agents/page.js"
+  "/neighborhoods/page": "app/neighborhoods/page.js",
+  "/listings/page": "app/listings/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/page": "app/page.js"
 }

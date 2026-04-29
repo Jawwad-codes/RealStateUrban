@@ -1,4 +1,5 @@
 /** @format */
+"use client";
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import Navbar from "./Navbar";
@@ -158,6 +159,12 @@ export default function Layout({
               <span>Fair Housing Notice</span>
               <span>DMCA</span>
             </div>
+            <p className="text-xs text-primary-foreground/40">
+              Made by{" "}
+              <span className="font-bold text-primary-foreground/60">
+                Pixova
+              </span>
+            </p>
           </div>
         </div>
       </footer>

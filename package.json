@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "clean": "rimraf .next out",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
