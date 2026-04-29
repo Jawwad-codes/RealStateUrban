@@ -165,7 +165,7 @@ export default function HomePage() {
               <h1 className="text-balance font-display text-5xl font-bold leading-[0.95] text-primary-foreground md:text-7xl lg:text-8xl">
                 Find Your Dream Home in Austin
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-8 text-white-50 md:text-xl">
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400 md:text-xl">
                 Explore premium homes, apartments, and investment properties
                 across Austin, Texas.
               </p>
